@@ -7,7 +7,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cors())
 const contactRoutes =require("./API/Routers/contatcRouter");
-// const chartRoutes =require("./API/routers/chartRoute");
+const messageRoute =require("./API/Routers/postMessagePersonsRouters");
 
 
 const sessionConfig =require("./session");
@@ -16,7 +16,7 @@ app.use(session(sessionConfig))
 
 
 app.use("/contact",contactRoutes)
-// app.use("/chart",chartRoutes)
+app.use("/msg",messageRoute)
 
 
 

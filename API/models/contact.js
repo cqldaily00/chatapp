@@ -35,5 +35,10 @@ const contactSchema =new mongoose.Schema({
 
 // 1 ->excellent,2-very good,3->good,4->bad
 
+contactSchema.index({
+  _id: 1
+}, {
+  background: true
+});
 const Contact = mongoose.model('Contact', contactSchema)
 module.exports = Contact
